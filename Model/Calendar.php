@@ -2,18 +2,15 @@
 
 namespace Ddd\Calendar\Model;
 
-use Ddd\Time\Model\TimePoint;
-use Ddd\Time\Model\TimeInterval;
-use Ddd\Time\Factory\TimePointFactory;
-use Ddd\Time\Model\Duration;
-
-use Ddd\Calendar\Service\EventProviderInterface;
-use Ddd\Calendar\Model\EventInterface;
 use Ddd\Calendar\Model\Strategy\BaseStrategy;
 use Ddd\Calendar\Model\Strategy\StrategyInterface;
+use Ddd\Time\Factory\TimePointFactory;
+use Ddd\Time\Model\Duration;
+use Ddd\Time\Model\TimeInterval;
+use Ddd\Time\Model\TimePoint;
 
 /**
- * Represents a calendar
+ * Represents a calendar.
  *
  * @author Joseph Rouff <rouffj@gmail.com>
  */
@@ -49,12 +46,12 @@ class Calendar implements CalendarInterface
      * @param array                  $events
      * @param StrategyInterface|null $strategy
      */
-    public function __construct($title, array $events = array(), StrategyInterface $strategy = null)
+    public function __construct($title, array $events = [], StrategyInterface $strategy = null)
     {
         $this->strategy = (null === $strategy) ? new BaseStrategy() : $strategy;
-        $this->title    = $title;
-        $this->events   = array();
-        $this->calendars = array();
+        $this->title = $title;
+        $this->events = [];
+        $this->calendars = [];
 
         foreach ($events as $event) {
             $this->add($event);
@@ -149,7 +146,7 @@ class Calendar implements CalendarInterface
 
     public function group(Duration $duration)
     {
-        $calendars = array();
+        $calendars = [];
         $first = $current = $this->getFirst()->getInterval()->getBegin();
         $end = $this->getLast()->getInterval()->getEnd();
         while (!$current->isAfter($end)) {
@@ -227,7 +224,7 @@ class Calendar implements CalendarInterface
             if ($event->getInterval()->getEnd()->isAfter($begin) || $event->getInterval()->getEnd()->isEquals($begin)) {
                 break;
             } else {
-                $offset ++;
+                $offset++;
             }
         }
         $events = array_slice($events, $offset);
@@ -241,7 +238,7 @@ class Calendar implements CalendarInterface
             if ($end->isAfter($event->getInterval()->getBegin())) {
                 break;
             } else {
-                $length --;
+                $length--;
             }
         }
 

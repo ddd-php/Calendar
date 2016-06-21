@@ -2,12 +2,12 @@
 
 namespace Ddd\Calendar\Tests\Howto;
 
-use Ddd\Calendar\Tests\TestCase;
 use Ddd\Calendar\Model\Calendar;
 use Ddd\Calendar\Model\Event;
-use Ddd\Time\Model\TimePoint;
-use Ddd\Time\Factory\TimeIntervalFactory;
+use Ddd\Calendar\Tests\TestCase;
 use Ddd\Time\Factory\DateIntervalFactory;
+use Ddd\Time\Factory\TimeIntervalFactory;
+use Ddd\Time\Model\TimePoint;
 
 class CalendarTest extends TestCase
 {
@@ -56,4 +56,3 @@ class CalendarTest extends TestCase
         $this->assertCount(4, $this->calendar);
     }
 }
-

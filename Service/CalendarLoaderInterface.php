@@ -9,12 +9,12 @@ interface CalendarLoaderInterface
     /**
      * @return \Ddd\Calendar\Model\CalendarInterface
      */
-    function load();
+    public function load();
 
     /**
      * @param TimeInterval|null $interval
      *
      * @return \Ddd\Calendar\Model\CalendarInterface
      */
-    function loadInterval(TimeInterval $interval);
+    public function loadInterval(TimeInterval $interval);
 }

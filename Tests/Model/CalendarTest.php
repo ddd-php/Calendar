@@ -7,12 +7,12 @@ use Ddd\Calendar\Model\Calendar;
 use Ddd\Calendar\Model\Event;
 use Ddd\Calendar\Model\EventInterface;
 use Ddd\Calendar\Model\Strategy\NoOverlapStrategy;
+use Ddd\Calendar\Tests\TestCase;
 use Ddd\Time\Factory\TimeIntervalFactory;
 use Ddd\Time\Model\Duration;
 use Ddd\Time\Model\TimeInterval;
 use Ddd\Time\Model\TimePoint;
 use Ddd\Time\Model\TimeUnit;
-use Ddd\Calendar\Tests\TestCase;
 
 class CalendarTest extends TestCase
 {
@@ -23,10 +23,10 @@ class CalendarTest extends TestCase
 
     public function setup()
     {
-        $this->calendar = new Calendar('foo calendar', array(
+        $this->calendar = new Calendar('foo calendar', [
             new Event(TimeIntervalFactory::create('2012-01-15 16:00', '2012-01-15 18:30')),
             new Event(TimeIntervalFactory::create('2012-01-20 08:00', '2012-01-23 08:00')),
-        ));
+        ]);
     }
 
     public function testConstructor()
@@ -83,7 +83,7 @@ class CalendarTest extends TestCase
     public function testUpdate()
     {
         $originalEvent = current(iterator_to_array($this->calendar));
-        $updatedEvent  = new Event(TimeIntervalFactory::create('2012-01-15 17:00', '2012-01-15 19:30'));
+        $updatedEvent = new Event(TimeIntervalFactory::create('2012-01-15 17:00', '2012-01-15 19:30'));
         $this->calendar->update($originalEvent, $updatedEvent);
 
         $this->assertCount(2, $this->calendar);

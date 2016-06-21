@@ -2,14 +2,12 @@
 
 namespace Ddd\Calendar\Model;
 
-use Ddd\Time\Model\TimePoint;
 use Ddd\Time\Model\TimeInterval;
-use Ddd\Calendar\Model\EventInterface;
-use Ddd\Time\Factory\TimePointFactory;
-use Ddd\Calendar\Service\EventProviderInterface;
+use Ddd\Time\Model\TimePoint;
+
 
 /**
- * Calendar interface
+ * Calendar interface.
  *
  * @author Jean-François Simon <contact@jfsimon.fr>
  */

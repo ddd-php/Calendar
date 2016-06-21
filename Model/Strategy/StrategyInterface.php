@@ -12,11 +12,11 @@ interface StrategyInterface
      * @param EventInterface   $newEvent Event to add to collection
      * @param EventInterface[] $events   Given collection
      *
-     * @return EventInterface[] Resulting collection
-     *
      * @throws \Rouffj\Time\Domain\Exception\CalendarEventException
+     *
+     * @return EventInterface[] Resulting collection
      */
-    function add(EventInterface $newEvent, array $events);
+    public function add(EventInterface $newEvent, array $events);
 
     /**
      * Applies event removal from collection.
@@ -24,11 +24,11 @@ interface StrategyInterface
      * @param EventInterface   $removedEvent Event to add to collection
      * @param EventInterface[] $events       Given collection
      *
-     * @return EventInterface[] Resulting collection
-     *
      * @throws \Rouffj\Time\Domain\Exception\CalendarEventException
+     *
+     * @return EventInterface[] Resulting collection
      */
-    function remove(EventInterface $removedEvent, array $events);
+    public function remove(EventInterface $removedEvent, array $events);
 
     /**
      * Applies updated event to original.
@@ -37,9 +37,9 @@ interface StrategyInterface
      * @param EventInterface   $updatedEvent  Updated event
      * @param EventInterface[] $events        Given collection
      *
-     * @return EventInterface[] Resulting collection
-     *
      * @throws \Rouffj\Time\Domain\Exception\CalendarEventException
+     *
+     * @return EventInterface[] Resulting collection
      */
-    function update(EventInterface $originalEvent, EventInterface $updatedEvent, array $events);
+    public function update(EventInterface $originalEvent, EventInterface $updatedEvent, array $events);
 }
