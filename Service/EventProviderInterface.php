@@ -7,10 +7,10 @@ interface EventProviderInterface
     /**
      * @return array
      */
-    function getEvents();
+    public function getEvents();
 
     /**
      * @return string
      */
-    function getName();
+    public function getName();
 }

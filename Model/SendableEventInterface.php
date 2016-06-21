@@ -7,10 +7,10 @@ interface SendableEventInterface extends EventInterface
     /**
      * @return string
      */
-    function getOrganizer();
+    public function getOrganizer();
 
     /**
      * @return array
      */
-    function getGuests();
+    public function getGuests();
 }

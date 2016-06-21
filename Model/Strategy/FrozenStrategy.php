@@ -2,8 +2,8 @@
 
 namespace Ddd\Calendar\Model\Strategy;
 
-use Ddd\Calendar\Model\EventInterface;
 use Ddd\Calendar\Exception\CalendarEventException;
+use Ddd\Calendar\Model\EventInterface;
 
 /**
  * Strategy which don't permit anything.
@@ -27,6 +27,7 @@ class FrozenStrategy implements StrategyInterface
     {
         throw CalendarEventException::removeWhileFrozen($removedEvent);
     }
+
     /**
      * {@inheritdoc}
      */

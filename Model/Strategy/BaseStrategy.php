@@ -2,8 +2,8 @@
 
 namespace Ddd\Calendar\Model\Strategy;
 
-use Ddd\Calendar\Model\EventInterface;
 use Ddd\Calendar\Exception\CalendarExceptionInterface;
+use Ddd\Calendar\Model\EventInterface;
 
 /**
  * Base strategy which permit everything.
@@ -20,11 +20,11 @@ class BaseStrategy implements StrategyInterface
         $index = 0;
         foreach ($events as $event) {
             if ($newEvent->getInterval()->isBefore($event->getInterval())) {
-                array_splice($events, $index, 0, array($newEvent));
+                array_splice($events, $index, 0, [$newEvent]);
 
                 return $events;
             }
-            $index ++;
+            $index++;
         }
         $events[] = $newEvent;
 
@@ -41,7 +41,7 @@ class BaseStrategy implements StrategyInterface
             if ($removedEvent->isEquals($event)) {
                 array_splice($events, $index, 1);
             } else {
-                $index ++;
+                $index++;
             }
         }
 

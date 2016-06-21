@@ -7,12 +7,12 @@ interface EventInterface
     /**
      * @return \Ddd\Time\Model\TimeInterval
      */
-    function getInterval();
+    public function getInterval();
 
     /**
      * @param EventInterface $event
      *
      * @return bool
      */
-    function isEquals(EventInterface $event);
+    public function isEquals(EventInterface $event);
 }

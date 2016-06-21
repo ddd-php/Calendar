@@ -2,8 +2,8 @@
 
 namespace Ddd\Calendar\Model\Strategy;
 
-use Ddd\Calendar\Model\EventInterface;
 use Ddd\Calendar\Exception\CalendarEventException;
+use Ddd\Calendar\Model\EventInterface;
 
 /**
  * Overlap strategy which permits introducing a new event event if existing event is present

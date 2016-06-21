@@ -7,10 +7,10 @@ interface NamedEventInterface extends EventInterface
     /**
      * @return string
      */
-    function getTitle();
+    public function getTitle();
 
     /**
      * @return string
      */
-    function getDescription();
+    public function getDescription();
 }

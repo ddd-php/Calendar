@@ -4,7 +4,6 @@ namespace Ddd\Calendar\Model\Strategy;
 
 use Ddd\Calendar\Model\CalendarInterface;
 use Ddd\Calendar\Model\EventInterface;
-use Ddd\Calendar\Service\EventPersisterInterface;
 use Ddd\Calendar\Service\CalendarPersisterInterface;
 
 /**
@@ -12,7 +11,7 @@ use Ddd\Calendar\Service\CalendarPersisterInterface;
  *
  * @author Jean-François Simon <contact@jfsimon.fr>
  */
-class PersistenceStrategyDecorator implements StrategyInterface
+class PersistenceStrategy implements StrategyInterface
 {
     /**
      * @var CalendarInterface
@@ -36,9 +35,9 @@ class PersistenceStrategyDecorator implements StrategyInterface
      */
     public function __construct(CalendarInterface $calendar, StrategyInterface $innerStrategy, CalendarPersisterInterface $persister)
     {
-        $this->calendar      = $calendar;
+        $this->calendar = $calendar;
         $this->innerStrategy = $innerStrategy;
-        $this->persister     = $persister;
+        $this->persister = $persister;
     }
 
     /**

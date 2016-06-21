@@ -24,7 +24,7 @@ class SendableEvent extends Event implements SendableEventInterface
     {
         parent::__construct($interval);
         $this->organizer = $organizer;
-        $this->guests = array();
+        $this->guests = [];
     }
 
     /**

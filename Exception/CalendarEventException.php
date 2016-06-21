@@ -36,7 +36,6 @@ class CalendarEventException extends \LogicException implements CalendarExceptio
         return new self($event, 'Cannot remove event from frozen calendar.');
     }
 
-
     /**
      * @param EventInterface $event
      *

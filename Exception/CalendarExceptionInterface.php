@@ -7,5 +7,5 @@ namespace Ddd\Calendar\Exception;
  */
 interface CalendarExceptionInterface
 {
-    function getMessage();
+    public function getMessage();
 }
